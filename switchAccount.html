@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Switch Account</title>
+<script>
+    var today=new Date()
+
+function myFunction() {
+    var txt;
+    if (confirm("Confirm your transaction") == true) {
+        txt = "You have confirmed your transaction at " +  today.toDateString() ;
+    } else {
+        txt = "You have ended your transaction!";
+
+    }
+    document.getElementById("confirm").innerHTML = txt;
+}
+</script>
+
+    <script>
+    $(function () {
+         $(":file").change(function () {
+             if (this.files && this.files[0]) {
+                 var reader = new FileReader();
+
+                 reader.onload = imageIsLoaded;
+                 reader.readAsDataURL(this.files[0]);
+             }
+         });
+      });
+
+     function imageIsLoaded(e) {
+         $('#myImg').attr('src', e.target.result);
+         $('#yourImage').attr('src', e.target.result);
+     };
+
+</script>
+    <style>
+        form {
+    width: 80%;
+    margin: 0 auto;
+}
+        button{
+            margin-top:0px;
+            margin-bottom: 0px;
+            margin-right:0px;
+            margin-left:300px;
+
+        }
+        .form{
+            margin-top: -400px;
+        }
+
+    </style>
+     <style>
+         body {
+  background: radial-gradient(600px at 50% 50% , 	#7FFFD4 20%, 		#00FFFF 100%);
+}
+h1 {
+  text-align: center;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 50px;
+  transform: skewY(-10deg);
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: tomato;
+  text-shadow:
+    -1px -1px 0 firebrick,
+    -2px -2px 0 firebrick,
+    -3px -3px 0 firebrick,
+    -4px -4px 0 firebrick,
+    -5px -5px 0 firebrick,
+    -6px -6px 0 firebrick,
+    -7px -7px 0 firebrick,
+    -8px -8px 0 firebrick,
+    -30px 20px 40px dimgrey
+}
+
+      .box {
+        /* basic styling */
+        width: 350px;
+        height:350px;
+        border: 1px solid #555;
+        font: 14px Arial;
+        margin-left: 1000px;
+
+        /* flexbox setup */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+
+        display: -moz-box;
+        -moz-box-orient: vertical;
+		-mox-box-align:center;
+		-mox-box-pack:center;
+
+        display: box;
+        box-orient: vertical;
+      }
+
+      .box > div {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        box-flex: 1;
+
+        -moz-transition: width 0.7s ease-out;
+        -o-transition: width 0.7s ease-out;
+        -webkit-transition: width 0.7s ease-out;
+        transition: width 0.7s ease-out;
+      }
+
+      /* our colors */
+      .box > div:nth-child(1){ background : #FCC; }
+      .box > div:nth-child(2){ background : #CFC; }
+      .box > div:nth-child(3){ background : #CCF; }
+
+      .box > div:hover {
+        height: 200px;
+      }
+</style>
+    <style>
+    #title {
+	font-family:Comic Sans Ms;
+	text-align:center;
+}
+
+
+@-webkit-keyframes slide{
+   from {
+	margin-left:2px;
+
+	}
+	to {
+	margin-left:20px;
+
+	}
+ }
+
+@-webkit-keyframes turn {
+    0%{
+	-webkit-transform:rotate(30deg);
+	}
+    20%{
+	-webkit-transform:rotate(60deg);
+	}
+	40%{
+	-webkit-transform:rotate(120deg);
+	}
+    60%{
+	-webkit-transform:rotate(210deg);
+	}
+	80%{
+	-webkit-transform:rotate(270deg);
+	}
+    100%{
+	-webkit-transform:rotate(360deg);
+	}
+}
+.char {
+    display:inline-block;
+	-webkit-animation-name:slide,turn;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease-in-out;
+
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-direction:alternate;
+}
+</style>
+</head>
+<body>
+<h1 id="title">
+<span id="S" class="char">S</span><span id="W1" class="char">W</span><span id="I" class="char">I</span><span id="T" class="char">T</span>
+    <span id="C" class="char">C</span><span id="H" class="char">H</span><br><span id="N" class="char">N</span><span id="O" class="char">O</span>
+    <span id="W" class="char">W</span></h1>
+</body>
+<div class="box">
+      <div>Savings
+    <table style="width:75%">
+        <tr>
+        <th>Account No.</th>
+            <th>Amount(SGD)</th>
+        </tr>
+        <tr>
+        <td>1234-5678-1111</td>
+        <td>1534.00</td>
+        </tr>
+        <tr>
+            <td>4827-6252-1341</td>
+            <td>434.00</td>
+        </tr>
+    </table>
+      </div>
+
+      <div>Fixed Deposits
+    <table border="0">
+        <tr>
+        <th>Account No.</th>
+            <th>Matured Date</th>
+            <th>Amount(SGD)</th>
+        </tr>
+        <tr>
+        <td>5454545-5465</td>
+        <td>30-12-2017</td>
+        <td>3000</td>
+        </tr>
+    </table>
+    </div>
+      <div>Current
+        <table border="0">
+            <tr>
+            <th>Account No.</th>
+            <th>Amount(SGD)</th>
+            </tr>
+            <tr>
+            <td>333-333-333-3</td>
+            <td>1000</td>
+            </tr>
+        </table>
+          </div>
+</div>
+<form action="">
+    <div class="form">
+    <p>Which Bank to change from:</p>
+    <select required>
+  <option value="DBS">DBS</option>
+  <option value="HSBS">HSBC</option>
+  <option value="CitiBank">CitiBank</option>
+  <option value="UOB">UOB</option>
+  <option value="OCBC">OCBC</option>
+
+</select >
+    <br>
+    <p>Which account type you would like to select:</p>
+    <select required>
+  <option value="type">Savings</option>
+  <option value="type">Fixed Deposit</option>
+  <option value="type">Current</option>
+</select>
+     <p>Which Bank number to select?</p>
+  <select required>
+  <option value="number">111-111-111-1</option>
+  <option value="number">222-222-222-2</option>
+  <option value="number">333-333-333-3</option>
+</select>
+    <br>
+        <br>
+    <label>How much to invest?:</label>
+    <br>
+        <br>
+<input class="amount" type="text" required />
+    <br>
+    <p>Which bank would you like to change to?</p>
+ <select required>
+  <option value="DBS">DBS</option>
+  <option value="HSBS">HSBC</option>
+  <option value="CitiBank">CitiBank</option>
+  <option value="UOB">UOB</option>
+  <option value="OCBC">OCBC</option>
+</select>
+    <br>
+    <p>Which account type you would like to change to?:</p>
+    <select required>
+  <option value="type">Savings</option>
+  <option value="type">Fixed Deposit</option>
+  <option value="type">Current</option>
+</select>
+    <br>
+    <br>
+        <img id="myImg" src="#" alt="Soft copy of your signature" height=200 width=100<form method="get" >
+        <br>
+            <input type='file' required>
+
+</div>
+    <button onclick="myFunction()">Confirm</button>
+</form>
+
+<p id="confirm"></p>
+</body>
+</html>

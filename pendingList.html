@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pending List</title>
+<style type="text/css">
+    body {
+  background: radial-gradient(600px at 50% 50% , 	#7FFFD4 20%, 		#00FFFF 100%);
+}
+
+    .box{
+        color: black;
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+    }
+    .approved{
+        color: green;
+    }
+    .pending{
+        color: orange;
+    }
+    .fail{
+        color:red;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+</head>
+<body>
+    <div>
+        <select>
+            <option value="DBS">DBS</option>
+            <option value="UOB">UOB</option>
+            <option value="OCBC">OCBC</option>
+        </select>
+    </div>
+    <div class="DBS box">
+        <table style="width:100%">
+  <tr>
+    <th>Bank account number</th>
+    <th>account type</th>
+    <th>amount(SGD)</th>
+     <th>Status of approval</th>
+  </tr>
+  <tr>
+    <td>1237-5678-3111</td>
+    <td>Savings</td>
+    <td>1504.00</td>
+    <td class="pending" > pending</td>
+  </tr>
+  <tr>
+      <td>5465-5423-1766</td>
+      <td>Fixed Deposit</td>
+      <td>3305.00</td>
+      <td class="fail">fail</td>
+  </tr>
+  <tr>
+    <td>1234-5678-1111</td>
+    <td>fixed account</td>
+    <td>9400.00</td>
+    <td class="approved" >Approved</td>
+  </tr>
+</table>
+    </div>
+
+    <div class="UOB box">
+          <table style="width:100%">
+  <tr>
+    <th>Bank account number</th>
+    <th>account type</th>
+    <th>amount(SGD)</th>
+     <th>Status of approval</th>
+  </tr>
+  <tr>
+    <td>1237-5678-3111</td>
+    <td>Savings</td>
+    <td>1504.00</td>
+    <td class="pending" >pending</td>
+  </tr>
+  <tr>
+    <td>3434-5678-1111</td>
+    <td>fixed account</td>
+    <td>9400.00</td>
+    <td class="approved" >Approved</td>
+  </tr>
+  <tr>
+      <td>2220-5403-1736</td>
+      <td>Fixed Deposit</td>
+      <td>5120.00</td>
+      <td class="fail">fail</td>
+  </tr>
+</table>
+
+    </div>
+    <div class="OCBC box">
+          <table style="width:100%">
+  <tr>
+    <th>Bank account number</th>
+    <th>account type</th>
+    <th>amount(SGD)</th>
+     <th>Status of approval</th>
+  </tr>
+  <tr>
+    <td>5127-5678-3111</td>
+    <td>Savings</td>
+    <td>1504.00</td>
+    <td class="pending" >pending</td>
+  </tr>
+  <tr>
+    <td>4534-5678-1111</td>
+    <td>fixed account</td>
+    <td>9400.00</td>
+    <td class="approved" >Approved</td>
+  </tr>
+                <tr>
+      <td>5645-5323-1266</td>
+      <td>Fixed Deposit</td>
+      <td>7777.00</td>
+      <td class="fail">fail</td>
+  </tr>
+</table>
+    </div>
+</body>
+</html>
